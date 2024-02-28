@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Table, Button } from "semantic-ui-react";
 import web3 from "../ethereum/web3";
 import StartupInstance from "../ethereum/startup";
+import { Router } from '../routes';
 
 class RequestRow extends Component {
   onApprove = async () => {
@@ -11,6 +12,7 @@ class RequestRow extends Component {
     await startup.methods.approveRequest(this.props.id).send({
       from: accounts[0],
     });
+    Router.pushRoute(`/startups/${this.props.address}/requests`);
   };
 
   onFinalize = async () => {
@@ -20,6 +22,7 @@ class RequestRow extends Component {
     await startup.methods.finaliseRequest(this.props.id).send({
       from: accounts[0],
     });
+    Router.pushRoute(`/startups/${this.props.address}/requests`);
   };
 
   render() {

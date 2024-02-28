@@ -49,7 +49,7 @@ class RequestIndex extends Component{
                         <Row>
                             <HeaderCell>ID</HeaderCell>
                             <HeaderCell>Description</HeaderCell>
-                            <HeaderCell>Amount(in GWEI)</HeaderCell>
+                            <HeaderCell>Amount</HeaderCell>
                             <HeaderCell>Recipient</HeaderCell>
                             <HeaderCell>Approval Count</HeaderCell>
                             <HeaderCell>Approve</HeaderCell>

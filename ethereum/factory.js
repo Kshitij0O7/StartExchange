@@ -3,7 +3,7 @@ import StartupList from './build/StartupList.json';
 
 const instance = new web3.eth.Contract(
     StartupList.abi,
-    "0x6Fda178606B19b6C5BC9d268C1E1D78a344B6C0e"
+    "0x723714C6F15DcDC8A12dEd2A9029793b3F2d7c36"
 )
 
 export default instance;

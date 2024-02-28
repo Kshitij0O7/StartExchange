@@ -58,11 +58,11 @@ class NewRequest extends Component {
                         />
                     </Form.Field>
                     <Form.Field>
-                        <label>Value in MATIC</label>
+                        <label>Value in ETHER</label>
                         <Input 
                             value = {this.state.value}
                             onChange = {(event) => {this.setState({value: event.target.value})}} 
-                            label = 'MATIC'
+                            label = 'ETHER'
                             labelPosition = 'right'
                         />
                     </Form.Field>

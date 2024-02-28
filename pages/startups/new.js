@@ -36,7 +36,7 @@ class NewStartup extends Component{
                     <Form.Field>
                         <label>MINIMUM ASK</label>
                         <Input 
-                            label = "MATIC" 
+                            label = "WEI" 
                             labelPosition="right"
                             value = {this.state.minimumAsk}
                             onChange = {event => {

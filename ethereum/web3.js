@@ -9,7 +9,7 @@ if (typeof window !== "undefined" && typeof window.ethereum !== "undefined") {
 } else {
   // We are on the server *OR* the user is not running metamask
   const provider = new Web3.providers.HttpProvider(
-    "https://polygon-mumbai.g.alchemy.com/v2/LaOZxNXt4zbb1S1259-DwE9n1M6HxpSH"
+    "https://eth-sepolia.g.alchemy.com/v2/qsmBqL-17wbolk3wYM-Lw4QkMhZzinqb"
   );
   web3 = new Web3(provider);
 }

@@ -21,10 +21,10 @@ class InvestForm extends Component{
             const accounts = await web3.eth.getAccounts();
             await startup.methods.invest().send({
                 from: accounts[0],
-                value: web3.utils.toWei(this.state.value, 'ether')
+                value: web3.utils.toWei(this.state.value, "ether")
             });
 
-            Router.replaceRoute(`/campaigns/${this.props.address}`);
+            Router.replaceRoute(`/startups/${this.props.address}`);
         } catch(err){
             this.setState({errorMessage: err.message})
         }
@@ -40,7 +40,7 @@ class InvestForm extends Component{
                     <Input
                         value = {this.state.value}
                         onChange = {event => {this.setState({value: event.target.value})}} 
-                        label = 'MATIC'
+                        label = 'ether'
                         labelPosition = 'right'
                     />
                 </Form.Field>

@@ -3,29 +3,31 @@ import { Card, Grid, Button } from 'semantic-ui-react'
 import Layout from '../../components/Layout';
 import startupInstance from '../../ethereum/startup';
 import InvestForm from '../../components/invest';
+import web3 from "../../ethereum/web3";
 import { Link } from '../../routes';
 
 class StartupDetail extends Component{
     static async getInitialProps(props){
         const startup = startupInstance(props.query.address);
         const summary = await startup.methods.getSummary().call();
+        // console.log(summary)
         return{
+            address: props.query.address,
             minimumAsk: summary[0],
             balance: summary[1],
             requestCount: summary[2],
             investorCount: summary[3],
             manager: summary[4],
-            address: props.query.address
         };
     }
 
     renderCards(){
         const{
-            minimumAsk,
             balance,
+            manager,
+            minimumAsk,
             requestCount,
             investorCount,
-            manager
         } = this.props;
 
         const items = [
@@ -37,14 +39,8 @@ class StartupDetail extends Component{
             },
             {
                 header: minimumAsk,
-                meta: 'Minimum Ask (in MATIC)',
+                meta: 'Minimum Ask (in WEI)',
                 description: 'This is the minimum amount of MATIC you have to pay to be listed as an investor',
-                style: {overflowWrap: 'break-word'}
-            },
-            {
-                header: balance,
-                meta: 'Total funds (in GWEI)',
-                description: 'This is the total funds raised by the startup upto the date',
                 style: {overflowWrap: 'break-word'}
             },
             {
@@ -57,6 +53,12 @@ class StartupDetail extends Component{
                 header: investorCount,
                 meta: 'Investors',
                 description: 'Total number of investors for the startup who have the power to approve request',
+                style: {overflowWrap: 'break-word'}
+            },
+            {
+                header: web3.utils.fromWei(balance, "ether"),
+                meta: 'Total funds (in ETH)',
+                description: 'This is the total funds raised by the startup upto the date',
                 style: {overflowWrap: 'break-word'}
             }
         ];
