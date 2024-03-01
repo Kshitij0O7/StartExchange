@@ -1,6 +1,6 @@
 # StartExchange
 Polygon summer hackathon project
 
-Address of the deployed Contract - 0x6Fda178606B19b6C5BC9d268C1E1D78a344B6C0e (for checking the address on polygonscan - Mumbai Testnet)
+Address of the deployed Contract - 0x723714C6F15DcDC8A12dEd2A9029793b3F2d7c36 (for checking the address on Ethereum - Sepolia Testnet)
 
 During the runs on localHost whenever a new startup was listed using Contract factory function we needed to stop the server by killing the terminal and starting it again
